@@ -19,6 +19,6 @@ TLDR, removing watermarks is really easy, but removing watermarks while preservi
 -- An implementation of watermarking via non-open-source models, where I literally just generate a random blacklist and then generate a token at a time, re-sampling that token until it's not in the blacklist anymore.
 - Implementation of detection of hard watermarking
 - A few implementations of watermark removal
--  
+  
 Note that this project is a work in-progress. If you have any feedback or are working on this problem as well, please reach out to me (firstname.lastnamewithoutthehyphen at duke dot edu)
 
