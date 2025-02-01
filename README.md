@@ -9,7 +9,7 @@ AI detection, which is a difficult problem to solve, and I think that the robust
 algorithms (on watermarked and un-watermarked LM generations) can be studied-well in the context of
 watermark removal. 
 
-TLDR, removing watermarks is really easy, but removing watermarks while preserving semantic similarity and writing quality is extremely hard, butttttttt there exists a natural, obvious benchmark (GPT evaluation of generations before and after watermark removal).
+Please see my write up (uploaded to the repo as a PDF) for an explanation of my algorithms and approach. TLDR, removing watermarks is really easy, but removing watermarks while preserving semantic similarity and writing quality is extremely hard, butttttttt there exists a natural, obvious benchmark (GPT evaluation of generations before and after watermark removal).
 
 ---
 
