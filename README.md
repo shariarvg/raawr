@@ -14,6 +14,7 @@ TLDR, removing watermarks is really easy, but removing watermarks while preservi
 ---
 
 ## What this repo has
+
 -- Implementation of generation with hard watermarking as described by [Kirchenbauer et. al](https://proceedings.mlr.press/v202/kirchenbauer23a.html) for open-source models with logit biases
 -- An implementation of watermarking via non-open-source models, where I literally just generate a random blacklist and then generate a token at a time, re-sampling that token until it's not in the blacklist anymore.
 -- Implementation of detection of hard watermarking 
