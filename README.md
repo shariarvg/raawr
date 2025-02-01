@@ -3,6 +3,13 @@
 Given a watermarked text generation $G$ from a language model $A$, can a bidirectional
 language model $B$ iteratively update the words in $G$ until the watermark is no longer detectable?
 
+The motivation here is to see how well watermarks can withstand watermark removal, thereby challenging
+whether the standard algorithms for watermarking are sufficiently robust. I also am interested in 
+AI detection, which is a difficult problem to solve, and I think that the robustness of AI detection
+algorithms (on watermarked and un-watermarked LM generations) can be studied-well in the context of
+watermark removal. 
+
+TLDR, removing watermarks is really easy, but removing watermarks while preserving semantic similarity and writing quality is extremely hard, butttttttt there exists a natural, obvious benchmark (GPT evaluation of generations before and after watermark removal).
 
 ## Table of Contents
 - [Overview](#overview)
@@ -17,80 +24,11 @@ language model $B$ iteratively update the words in $G$ until the watermark is no
 ---
 
 ## Overview
-Provide a short description of your project:
-- What does it do?
-- Why did you create it?
-- Who is it for?
-
-Example:
-> This project is a deep learning model for **clinical note analysis**. It extracts key medical concepts, evaluates **MMD shifts**, and tracks diagnosis consistency over time.
-
+-- Implementation of generation with hard watermarking as described by [Kirchenbauer et. al](https://proceedings.mlr.press/v202/kirchenbauer23a.html) for open-source models with logit biases
+-- An implementation of watermarking via non-open-source models, where I literally just generate a random blacklist and then generate a token at a time, re-sampling that token until it's not in the blacklist anymore.
+-- Implementation of detection of hard watermarking 
+-- A few implementations of watermark removal
 ---
 
-## Features
-✔️ List the main features of your project.
-✔️ Mention what makes it unique or useful.
-✔️ If applicable, include future features you'd like to add.
+Note that this project is a work in-progress. If you have any feedback or are working on this problem as well, please reach out to me (firstname.lastnamewithoutthehyphen at duke dot edu)
 
-Example:
-- ✅ **MMD Computation** for comparing embeddings  
-- ✅ **Deep Learning-Based Text Classification**  
-- ✅ Supports **Multiple Datasets** (MIMIC-III, MIMIC-IV)  
-
----
-
-## Installation
-Provide clear steps on how to install and set up the project.
-
-### **Prerequisites**
-- Python 3.8+
-- PyTorch, NumPy, Pandas
-
-### **Steps**
-```sh
-# Clone the repository
-git clone https://github.com/yourusername/yourrepo.git
-
-# Navigate into the project directory
-cd yourrepo
-
-# Create a virtual environment (optional but recommended)
-python3 -m venv venv
-source venv/bin/activate
-
-# Install dependencies
-pip install -r requirements.txt
-```
-
----
-
-## Usage
-Provide examples of how to use the project.
-```sh
-python script.py --arg1 value1 --arg2 value2
-```
-
----
-
-## Configuration
-Explain any configuration settings or environment variables needed.
-
----
-
-## Contributing
-If you'd like to contribute, follow these steps:
-1. Fork the repo
-2. Create a new branch (`git checkout -b feature-branch`)
-3. Commit changes (`git commit -m 'Add new feature'`)
-4. Push to the branch (`git push origin feature-branch`)
-5. Submit a Pull Request
-
----
-
-## License
-Specify the project's license.
-
----
-
-## Acknowledgments
-Credit any libraries, tools, or contributors who helped with the project.
